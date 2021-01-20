@@ -6,7 +6,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 CREATE FUNCTION [dbo].[Split]    
--- Function create Table from list of values --
+-- Function creates Table from list of values --
 (    
   @List VARCHAR(MAX),    -- list of values to transform 
   @SplitOn VARCHAR(5)    -- item separator
