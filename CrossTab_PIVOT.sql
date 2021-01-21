@@ -9,6 +9,13 @@ GO
 
 ---- 
 -- Create CROSS Table
+-- NOTE
+/*
+ I use 
+ @Table AS sysname,                     -- Source table for crosstab
+  just only because it was easier for my purposes.
+I think it is no problem to redevelop this SP to use query as a source 
+*/
 ----
 
 CREATE PROCEDURE [dbo].[CrossTab_PIVOT]
