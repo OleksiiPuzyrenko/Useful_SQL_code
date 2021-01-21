@@ -1,6 +1,3 @@
-USE [Optima_Cs]
-GO
-
 /****** Object:  StoredProcedure [dbo].[CheckBadSessions]    Script Date: 21/01/2021 15:01:12 ******/
 SET ANSI_NULLS ON
 GO
