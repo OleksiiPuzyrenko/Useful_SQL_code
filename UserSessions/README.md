@@ -1,33 +1,31 @@
-Here is code for User Login from Existing system
+<b>Here is code for User Login from Existing system</b>
 
-Legenda:
-User HAS NO access to DB 
-Application use only one secret user for  communication with DB.
+<U>Legenda:</U>
+User HAS NO access to DB.<BR> 
+Application use only one secret user for  communication with DB.<BR>
+<BR>
+To identify windows user what works with DB and logging changes  this code is used.<BR>
+Session - linked WindosUserName with PID in this way we know that User made changes.<BR>
+Application creates 3 connection for each user<BR>
+So 3 Sessions are created 1 main and 2 slave.<BR>
 
-To identify windows user what works with DB and logging changes  this code is used.
-Session - linked WindosUserName with PID in this way we know that User made changes.
-Application creates 3 connection for each user
-So 3 Sessions are created 1 main and 2 slave.
--------------------------------------------
-Example:
--- Create "Main session"
-EXEC [dbo].[UserLogIn]    @WindowsUserName = 'User 1'
 
---- This SP returns SessionId and Permission Matrix
-UserID	SessionID	IsLocked	Language	Description	IsAppAdmin	IsProcessAdmin	IsValidator	HasSignRights	IsDispatch	IsRouteCreator	IsCollaborator	IsQAdmin	IsTextAdmin	CanExportXLS	IsTextChange	IsObsST	IsObsST_R	IsObs	IsObsList	IsObsSOS	IsObsSOS_R	IsObsFile	IsObsFile_R	IsATBPriority	IsErrCorrect	IsDoubleDelete	IsSAPWrite
-APUZYRENKO	130354	0	N		0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0
-------
--- Create 2 slave
+<b>Example:<BR>
+-- Create "Main session" <BR>
+	
+<b>EXEC [dbo].[UserLogIn]    @WindowsUserName = 'User 1'</b> <BR>
+
+-- This SP returns SessionId and Permission Matrix <BR>
+-- Create 2 slave <br>
 EXEC [dbo].[UserLogIn]    @WindowsUserName = 'User 1',    @MainSessionID = 130354
 EXEC [dbo].[UserLogIn]    @WindowsUserName = 'User 1',    @MainSessionID = 130354
-
 
 -- To close Sessions
 EXEC [dbo].[CloseUserSession] @SessionID = 130354
  
--------------------------------------------
 
-Tables:
+
+<Tables:
 
 --- USERS ---
 SET ANSI_NULLS ON
