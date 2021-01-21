@@ -22,8 +22,8 @@ USER 1	130355	0	N		0	0	0	0	0	0	0
 </pre>
 -- This SP returns SessionId and Permission Matrix <BR>
 -- Create 2 slave <br>
-EXEC [dbo].[UserLogIn]    @WindowsUserName = 'User 1',    @MainSessionID = 130354 <br>
-EXEC [dbo].[UserLogIn]    @WindowsUserName = 'User 1',    @MainSessionID = 130354 <br>
+EXEC [dbo].[UserLogIn]    @WindowsUserName = 'User 1',    @MainSessionID = 130355 <br>
+EXEC [dbo].[UserLogIn]    @WindowsUserName = 'User 1',    @MainSessionID = 130355 <br>
 <br>
 -- To close Sessions <br>
 EXEC [dbo].[CloseUserSession] @SessionID = 130354  
