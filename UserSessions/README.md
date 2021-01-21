@@ -16,7 +16,10 @@ So 3 Sessions are created 1 main and 2 slave.<BR>
 -- Create "Main session" <BR>
 	
 <b>EXEC [dbo].[UserLogIn]    @WindowsUserName = 'User 1'</b> <BR>
-
+<pre>	
+UserID	SessionID	IsLocked	Language	Description	IsAppAdmin	IsProcessAdmin	
+USER 1	130355	0	N		0	0	0	0	0	0	0	
+</pre>
 -- This SP returns SessionId and Permission Matrix <BR>
 -- Create 2 slave <br>
 EXEC [dbo].[UserLogIn]    @WindowsUserName = 'User 1',    @MainSessionID = 130354 <br>
